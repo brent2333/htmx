@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTMX</title>
+    <script src="/scripts/htmx.min.js"></script>
+    <link rel="stylesheet" href="/assets/main.css" />
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li><button hx-get="/home" hx-target="#container" hx-swap="innerHTML" hx-push-url="true">Home</button></li>
+        <li><button hx-get="/about" hx-target="#container" hx-swap="innerHTML" hx-push-url="true">About</button></li>
+      <li><button hx-get="/form" hx-target="#container" hx-swap="innerHTML" hx-push-url="true">Form</button></li>
+    </ul>
+    </header>
+    <main>
+      <div id="container"></div>
+    </main>
+  </body>
+</html>

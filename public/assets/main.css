@@ -1,0 +1,70 @@
+body {
+    background-color: #333;
+}
+
+main {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #ddd;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+button:hover {
+    cursor: pointer
+}
+
+section {
+    display: flex;
+    gap: 24px;
+    flex-direction: column; 
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 8px;
+}
+
+form {
+    padding: 24px;
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p {
+    line-height: 1.5;
+    max-width: 664px;
+}
+
+a {
+    color: #ddd;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+label {
+    font-weight: 700;
+}
+
+input[type=text], input[type=email] {
+    padding: 8px;
+    border-radius: 10px;
+}
+
+button {
+    max-width: 140px;
+    padding: 14px;
+    background-color: #000;
+    color: #eee;
+    border-radius: 10px;
+    font-size: 16px;
+    border: none;
+}
+button:hover {
+    background-color: #ddd;
+}

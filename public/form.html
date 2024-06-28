@@ -1,0 +1,21 @@
+<div id="parent-div">
+<form
+  hx-post="/users"
+  hx-trigger="click"
+  hx-target="#parent-div"
+  hx-swap="outerHTML">
+    <div>
+      <label>Name
+        <input type="text" />
+      </label>
+    </div>
+  <div>
+    <label>Email
+      <input type="email" />
+    </label>
+  </div>
+  <button
+    type="submit"
+    >Add User</button>
+  </form>
+</div>
