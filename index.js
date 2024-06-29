@@ -17,6 +17,7 @@ app.use(formidable());
 app.get("/users", db.getUsers);
 app.post("/users", db.createUser);
 
+// layout
 app.get("/", (req, res) => {
   res.render("index");
 });
@@ -40,9 +41,9 @@ const sendFourOhFour = (res) => {
   res.sendFile(fourOhFour, options);
 };
 
-app.get("/home", (req, res) => {
+const returnHTML = (req, res, name) => {
   if (req.headers["hx-request"]) {
-    const fileName = "/public/home.html";
+    const fileName = `/public/${name}.html`;
     res.sendFile(fileName, options, function (err) {
       if (err) {
         sendFourOhFour();
@@ -52,34 +53,10 @@ app.get("/home", (req, res) => {
   } else {
     sendHome(res);
   }
-});
+};
 
-app.get("/form", (req, res) => {
-  if (req.headers["hx-request"]) {
-    const fileName = "/public/form.html";
-    res.sendFile(fileName, options, function (err) {
-      if (err) {
-        sendFourOhFour();
-        console.error("Error sending file:", err);
-      }
-    });
-  } else {
-    sendHome(res);
-  }
-});
-
-app.get("/about", (req, res) => {
-  if (req.headers["hx-request"]) {
-    const fileName = "/public/about.html";
-    res.sendFile(fileName, options, function (err) {
-      if (err) {
-        sendFourOhFour();
-        console.error("Error sending file:", err);
-      }
-    });
-  } else {
-    sendHome(res);
-  }
+app.get("/*", function (req, res) {
+  returnHTML(req, res, req.originalUrl.replace("/", ""));
 });
 
 app.listen(PORT);
