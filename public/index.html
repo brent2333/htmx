@@ -10,14 +10,20 @@
   </head>
   <body>
     <header>
-      <ul>
-        <li><a hx-get="/home" hx-target="#container" hx-swap="innerHTML" hx-push-url="true">Home</a></li>
+      <div class="round"><img src="/assets/img/logo.jpg"  alt="logo BL"/></div>
+      <div><ul>
+        <li><a hx-get="/home" hx-target="#container" hx-swap="innerHTML" hx-push-url="true" aria-selected="true">Home</a></li>
         <li><a hx-get="/about" hx-target="#container" hx-swap="innerHTML" hx-push-url="true">About</a></li>
         <li><a hx-get="/form" hx-target="#container" hx-swap="innerHTML" hx-push-url="true">Form</a></li>
-    </ul>
+    </ul></div>
     </header>
     <main>
-      <div id="container"></div>
+      <div id="container" hx-get="/home" hx-target="#container"></div>
+      <aside id="template-aside">
+        <div hx-get="/home-aside" hx-target="innerHTML"></div>
+      </aside>
     </main>
+    <footer><p>Copyright 2024</p>
+    </footer>
   </body>
 </html>

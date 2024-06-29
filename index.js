@@ -56,9 +56,17 @@ const returnHTML = (req, res, name) => {
   }
 };
 
-// HTML catchall
+// catchall HTML and assets
 app.get("/*", function (req, res) {
-  returnHTML(req, res, req.originalUrl.replace("/", ""));
+  if (!req.originalUrl.includes("assets")) {
+    returnHTML(req, res, req.originalUrl.replace("/", ""));
+  } else {
+    res.sendFile(req.originalUrl, options, function (err) {
+      if (err) {
+        console.error("Error sending IMAGE:", err);
+      }
+    });
+  }
 });
 
 app.listen(PORT);
