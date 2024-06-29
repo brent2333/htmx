@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(formidable());
 
+// api
 app.get("/users", db.getUsers);
 app.post("/users", db.createUser);
 
@@ -55,6 +56,7 @@ const returnHTML = (req, res, name) => {
   }
 };
 
+// HTML catchall
 app.get("/*", function (req, res) {
   returnHTML(req, res, req.originalUrl.replace("/", ""));
 });
