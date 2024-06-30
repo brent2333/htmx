@@ -13,16 +13,20 @@
       <div><ul>
         <li><a hx-get="/home" hx-target="#container" hx-swap="innerHTML" hx-push-url="true" aria-selected="true">Home</a></li>
         <li><a hx-get="/about" hx-target="#container" hx-swap="innerHTML" hx-push-url="true">About</a></li>
-        <li><a hx-get="/form" hx-target="#container" hx-swap="innerHTML" hx-push-url="true">Form</a></li>
     </ul></div>
     </header>
     <main>
       <div id="container" hx-get="/home" hx-trigger="load"></div>
       <aside id="template-aside" hx-get="/home-aside" hx-trigger="load">
       </aside>
+      <div id="signup">
+        <h3>Get in Touch</h3>
+      <button class="" hx-get="/form" hx-target="#signup">Sign Up Form</button>
+    </div>
     </main>
     <footer><p>Copyright 2024</p>
     </footer>
     <script src="/scripts/htmx.min.js"></script>
+    <script src="/scripts/form.js"></script>
   </body>
 </html>
