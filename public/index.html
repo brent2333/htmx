@@ -27,6 +27,10 @@
     <footer><p>Copyright 2024</p>
     </footer>
     <script src="/scripts/htmx.min.js"></script>
-    <script src="/scripts/form.js"></script>
+    <script>
+      (async function () {
+        htmx.ajax('GET', location.pathname, '#container')
+      }());
+    </script>
   </body>
 </html>
