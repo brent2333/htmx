@@ -18,7 +18,7 @@ app.use("/users", usersRouter);
 
 // layout
 app.get("/", (req, res) => {
-  res.render("index");
+  sendHome(res);
 });
 
 const options = {
@@ -45,7 +45,7 @@ const returnHTML = (req, res, name) => {
     const fileName = `/public/${name}.html`;
     res.sendFile(fileName, options, function (err) {
       if (err) {
-        sendFourOhFour();
+        sendFourOhFour(res);
         console.error("Error sending file:", err);
       }
     });

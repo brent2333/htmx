@@ -29,7 +29,11 @@
     <script src="/scripts/htmx.min.js"></script>
     <script>
       (async function () {
-        htmx.ajax('GET', location.pathname, '#container')
+        setTimeout(() => {
+          if (location.pathname !== '/home' && location.pathname !== '/') {
+            htmx.ajax('GET', location.pathname, '#container');
+          }
+        },100);
       }());
     </script>
   </body>

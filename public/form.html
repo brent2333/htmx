@@ -1,6 +1,6 @@
 
   <div class="form-wrap">
-    <form id="userForm" method="post" action="/users/createuser">
+    <form id="userForm" method="post" action="/users/sendmessage">
     <div class="flex">
         <label for="name" class="form-label">Name:</label>
         <input type="text" id="name" name="name" required class="form-control">
@@ -18,3 +18,19 @@
 
     <button type="submit" class="btn btn-dark">Send Message</button>
 </form>
+<script>
+    (function() {
+        const form = document.getElementById('userForm')
+        form.addEventListener('submit', function (event) {
+        var data = this;
+        fetch(data.getAttribute('action'), {
+        method: data.getAttribute('method'),
+        body: new FormData(data)
+        }).then(res=>res.text())
+        .then(function (data) {
+            htmx.ajax('GET', '/thanks', '#userForm');
+        });
+        event.preventDefault();
+    });
+    }())
+</script>
