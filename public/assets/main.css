@@ -162,6 +162,7 @@ input, textarea {
     margin-left: 12px;
     padding: 8px;
     border-radius: 10px;
+    max-width: 480px;
 }
 
 input[type=text], input[type=email] {
@@ -203,6 +204,9 @@ button:hover {
     }
     #signup {
         width: 100vw;
+    }
+    input, textarea {
+        max-width: 320px;
     }
     
 }
