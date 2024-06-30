@@ -5,7 +5,6 @@ const pool = require("../../db");
 const usersRouter = express.Router();
 
 usersRouter.get("/", (request, response) => {
-  console.log("FUUUUUUCCCCKKKKK");
   pool.query("SELECT * FROM users ORDER BY id ASC", (error, results) => {
     if (error) {
       throw error;
@@ -15,7 +14,6 @@ usersRouter.get("/", (request, response) => {
 });
 
 usersRouter.post("/createuser", (request, response) => {
-  console.log("CREATE USER", request.fields);
   const { name, email } = request.fields;
 
   pool.query(
