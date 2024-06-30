@@ -19,7 +19,6 @@ header, footer {
     margin: 0 auto;
     border-radius: 18px;
     max-width: 1024px;
-    margin: 0 auto;
 }
 
 header {
@@ -73,6 +72,12 @@ aside {
     padding: 24px;
     background-color: rgba(224, 189, 150, 0.5);
     color: #fff;
+}
+
+details p {
+    background-color: #262d40;
+    padding: 16px;
+    border-radius: 18px;
 }
 
 h1, h2, h3, h4, h5 {

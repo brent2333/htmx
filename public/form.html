@@ -22,6 +22,7 @@
     (function() {
         const form = document.getElementById('userForm')
         form.addEventListener('submit', function (event) {
+        event.preventDefault();
         var data = this;
         fetch(data.getAttribute('action'), {
         method: data.getAttribute('method'),
@@ -30,7 +31,6 @@
         .then(function (data) {
             htmx.ajax('GET', '/thanks', '#userForm');
         });
-        event.preventDefault();
     });
     }())
 </script>
