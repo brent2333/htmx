@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>HTMX</title>
-    <script src="/scripts/htmx.min.js"></script>
     <link rel="stylesheet" href="/assets/main.css" />
   </head>
   <body>
     <header>
-      <div class="round"><img src="/assets/img/logo.jpg"  alt="logo BL"/></div>
+      <div class="round"><a class="logo" href="/"><img src="/assets/img/logo.jpg"  alt="logo BL"/></a></div>
       <div><ul>
         <li><a hx-get="/home" hx-target="#container" hx-swap="innerHTML" hx-push-url="true" aria-selected="true">Home</a></li>
         <li><a hx-get="/about" hx-target="#container" hx-swap="innerHTML" hx-push-url="true">About</a></li>
@@ -18,12 +17,12 @@
     </ul></div>
     </header>
     <main>
-      <div id="container" hx-get="/home" hx-target="#container"></div>
-      <aside id="template-aside">
-        <div hx-get="/home-aside" hx-target="innerHTML"></div>
+      <div id="container" hx-get="/home" hx-trigger="load"></div>
+      <aside id="template-aside" hx-get="/home-aside" hx-trigger="load">
       </aside>
     </main>
     <footer><p>Copyright 2024</p>
     </footer>
+    <script src="/scripts/htmx.min.js"></script>
   </body>
 </html>

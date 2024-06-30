@@ -24,7 +24,6 @@ header, footer {
 
 header {
     display: flex;
-    justify-content: space-between;
 }
 .round {
     mask-image: url('/assets/img/photo.svg');
@@ -54,18 +53,19 @@ article .photo {
 }
 
 footer p, footer a {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
     font-size: 12px;
     color: rgba(135, 146, 199, 0.7);
 }
 
 aside {
     border-radius: 18px;
+    padding: 24px;
     background-color: rgba(224, 189, 150, 0.5);
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
 }
 
 button:hover {
@@ -89,7 +89,7 @@ form {
     display: flex;
     gap: 24px;
     flex-direction: column;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
 }
 
 p {
@@ -99,13 +99,21 @@ p {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-a:not(.footer-attr) {
+a {
+    color: #7e99ed;
+}
+
+header a:not(.logo) {
     color: #ddd;
     font-weight: 700;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: rgba(30, 32, 38, 0.6);
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    background-color: rgba(30, 32, 38, 0.7);
     padding: 6px 8px;
     border-radius: 4px;
+}
+header a:not(.logo):hover {
+    background-color: rgba(0,0,0,0.4);
+    cursor: pointer;
 }
 
 label {
@@ -117,7 +125,7 @@ input {
     margin-left: 12px;
 }
 
-input[type=text], input[type=email] {
+input[type=text], input[type=email], input[type=password] {
     padding: 8px;
     border-radius: 10px;
 }

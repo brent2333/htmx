@@ -1,9 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const formidable = require("express-formidable");
-const db = require("./queries");
 const path = require("path");
-
+const usersRouter = require("./public/routes/users");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -14,9 +13,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(formidable());
 
-// api
-app.get("/users", db.getUsers);
-app.post("/users", db.createUser);
+// apis
+app.use("/users", usersRouter);
 
 // layout
 app.get("/", (req, res) => {

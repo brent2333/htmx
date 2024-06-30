@@ -1,23 +1,20 @@
-const Pool = require("pg").Pool;
-const pool = new Pool({
-  user: "brent",
-  host: "localhost",
-  database: "api",
-  password: "Y211f9twR!!!",
-  port: 5432,
-});
+const express = require("express");
 
-const getUsers = (request, response) => {
+const pool = require("../../db");
+
+const usersRouter = express.Router();
+
+usersRouter.get("/", (request, response) => {
+  console.log("FUUUUUUCCCCKKKKK");
   pool.query("SELECT * FROM users ORDER BY id ASC", (error, results) => {
     if (error) {
       throw error;
     }
-    // const firstUser = `<div>${results.rows[0].name}</div>`;
     response.status(200).json(results.rows);
   });
-};
+});
 
-const createUser = (request, response) => {
+usersRouter.post("/createuser", (request, response) => {
   console.log("CREATE USER", request.fields);
   const { name, email } = request.fields;
 
@@ -31,9 +28,6 @@ const createUser = (request, response) => {
       response.status(201).send(`User added with ID: ${results.insertId}`);
     }
   );
-};
+});
 
-module.exports = {
-  getUsers,
-  createUser,
-};
+module.exports = usersRouter;
