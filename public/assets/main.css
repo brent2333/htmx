@@ -61,6 +61,15 @@ article .photo {
     align-items: center;
 }
 
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-col li {
+    font-size: 18px;
+}
+
 footer p, footer a {
     font-family: 'Franklin Gothic Medium', Arial, sans-serif;
     font-size: 12px;
